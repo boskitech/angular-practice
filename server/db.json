@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "username": "Boskitech",
+      "email": "sderhhe",
+      "password": "676767",
+      "address": {
+        "city": "Kaduna",
+        "state": "aewrgea",
+        "postal_code": "90909090"
+      },
+      "alternateEmails": [],
+      "id": 1
+    },
+    {
+      "username": "Nura",
+      "email": "Inuwa",
+      "password": "090767768",
+      "address": {
+        "city": "Lagos",
+        "state": "Ikeja",
+        "postal_code": "800988"
+      },
+      "id": 2
+    },
+    {
+      "username": "344",
+      "email": "Lawal",
+      "password": "07025256276",
+      "address": {
+        "city": "reeyr5y5y",
+        "state": "ibadan",
+        "postal_code": "0999000"
+      },
+      "id": 3
+    },
+    {
+      "username": "Haruna",
+      "email": "Ismail",
+      "password": "ftr22ytf2ty",
+      "address": {
+        "city": "Abuja",
+        "state": "Nigeria",
+        "postal_code": "900766"
+      },
+      "id": 4
+    }
+  ]
+}

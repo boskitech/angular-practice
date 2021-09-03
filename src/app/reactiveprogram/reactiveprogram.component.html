@@ -1,0 +1,62 @@
+<div class="login form" fxLayoutAlign="center center">
+    <mat-card fxFlex="30">
+        <mat-toolbar>Form validation</mat-toolbar>
+        <form action="" fxLayout="column" fxLayoutAlign="strech" [formGroup]="formValidation">
+            <mat-form-field>
+                <input matInput type="text" placeholder="Username" formControlName="username">
+                <mat-hint>
+                    <div style="color:red;" *ngIf="formValidation.controls['username'].invalid &&
+                        formValidation.controls['username'].touched" >
+                        <div *ngIf="formValidation.controls['username'].errors?.required">
+                        Userame is required.
+                        </div>
+                    </div>
+                </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="email" placeholder="Email" formControlName="email">
+                <mat-hint>
+                    <div style="color:red;" *ngIf="formValidation.controls['email'].invalid &&
+                        formValidation.controls['email'].touched" >
+                        <div *ngIf="formValidation.controls['email'].errors?.required">
+                        Email is required.
+                        </div>
+                    </div>
+                </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <mat-hint>
+                    <div style="color:red;" *ngIf="formValidation.controls['password'].invalid &&
+                        formValidation.controls['password'].touched" >
+                        <div *ngIf="formValidation.controls['password'].errors?.required">
+                        Password is required.
+                        </div>
+                    </div>
+                </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" placeholder="Confirm Password" formControlName="confirm_password">
+                <mat-hint>
+                    <div style="color:red;" *ngIf="formValidation.controls['confirm_password'].invalid &&
+                        formValidation.controls['confirm_password'].touched" >
+                        <div *ngIf="formValidation.controls['confirm_password'].errors?.required">
+                        Password is required.
+                        </div>
+                    </div>
+                    <div style="color:red;" *ngIf="formValidation.controls['password'].value != 
+                        formValidation.controls['confirm_password'].value &&
+                        formValidation.controls['confirm_password'].touched" >
+                        Passwords do not match.
+                    </div>
+                </mat-hint>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="click()">Submit</button><br>
+            <p>Uservalue: {{ uservalue  }}</p>
+        </form>
+    </mat-card>
+</div>

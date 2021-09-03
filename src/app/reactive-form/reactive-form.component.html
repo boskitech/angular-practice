@@ -1,0 +1,67 @@
+<div class="loginbar" fxLayoutAlign="center">
+    <mat-card fxFlex="30">
+      <mat-toolbar color="primary" class="toolbar" >Reactive Forms</mat-toolbar>
+       <form fxLayoutAlign="strech" fxLayout="column" [formGroup]="myForm">
+          <mat-form-field>
+             <input fxLayout="row" matInput  placeholder="Username" formControlName="username">
+             <mat-hint style="color: red;" *ngIf="" >Username is required!</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input fxLayout="row" matInput  placeholder="Email" formControlName="email">
+         </mat-form-field> 
+
+         <!--<div fxLayout="row" fxFlex="100" formArrayName="alternateEmails" *ngFor="let alternateEmail of alternateEmails.controls; let i=index" >
+          <mat-form-field>
+               <input fxLayout="row" fxFlex="100"  matInput placeholder="Add Alternate Email" [formControlName]="i" type="email">
+            </mat-form-field> 
+         </div>
+         <button fxLayout="column" mat-flat-button color="warn" (click)="addNewField()">Add Alternate Email </button>
+         -->
+
+         <mat-form-field>
+            <input fxLayout="row" matInput  placeholder="Password" formControlName="password">
+         </mat-form-field> 
+
+         <div formGroupName="address">
+            <mat-form-field>
+               <input fxLayout="row" matInput  placeholder="City" formControlName="city">
+            </mat-form-field>
+  
+            <mat-form-field>
+              <input fxLayout="row" matInput  placeholder="State" formControlName="state">
+           </mat-form-field> 
+  
+           <mat-form-field>
+              <input fxLayout="row" matInput  placeholder="Postal code" formControlName="postal_code">
+           </mat-form-field> 
+         </div>
+
+         <button mat-raised-button color="primary" (click)="addUser(myForm)">Submit Form </button><br>
+         <button mat-raised-button color="primary" (click)="updateUser()">Submit Form </button><br>
+       </form>
+    </mat-card>
+</div>
+<div>
+   <thead>
+      <tr>
+         <th>Username</th>
+         <th>Email</th>
+         <th>City</th>
+         <th>State</th>
+         <th>Postal Code</th>
+      </tr>
+   </thead> 
+   <tbody>
+      <tr *ngFor="let user of allUser">
+         <td>{{user.username}}</td>
+         <td>{{user.email}}</td>
+         <td>{{user.address.city}}</td>
+         <td>{{user.address.state}}</td>
+         <td>{{user.address.postal_code}}</td>
+         <td><button (click)="editUser(user)">Edit</button></td>
+         <td><button (click)="deleteUser(user)">Delete</button></td>
+      </tr>
+   </tbody>
+</div>
+  

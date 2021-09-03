@@ -1,0 +1,27 @@
+<div class="mycal" fxLayoutAlign="center" style="margin-top: 10px;">
+    <mat-card  fxFlex="33">
+        <mat-toolbar color="primary" class="toolbar">
+            Simple Calculator
+        </mat-toolbar>
+        <form fxLayoutAlign="strech" fxLayout="column" action="" [formGroup]="myForm">
+            <mat-form-field>
+                <mat-label>Inputs</mat-label> 
+                <input matInput *ngIf="display" fxLayout="row" type="number" placeholder="First Value" 
+                formControlName="calInput" name="firstInput" required>      
+                <input matInput #focusfield *ngIf="!display" fxLayout="row" value="{{ans}}"type="number" placeholder="Second Value" 
+                formControlName="calInput2" name="firstInput" required> 
+             </mat-form-field>
+                <div fxLayout="row" formArrayName="newFields" *ngFor="let newField of newFields.controls; let i=index" >
+                    <input placeholder="Input Next Value" [formControlName]="i" autofocus type="number">
+                </div>
+            <div fxLayout="row" fxLayoutAlign="space-between strech">
+                <button mat-raised-button (click)="add()" type="submit">+</button>
+                <button mat-raised-button (click)="sub()" type="submit">-</button>
+                <button mat-raised-button (click)="mul()" type="submit">*</button>
+                <button mat-raised-button (click)="div()" type="submit">/</button>
+                <button mat-raised-button (click)="calc()" color="accent" type="submit">=</button>
+                <button mat-raised-button (click)="clear()" color="warn" type="submit">AC</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

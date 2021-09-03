@@ -1,0 +1,38 @@
+<div class="loginbar" fxLayoutAlign="center">
+    <mat-card fxFlex="60">
+      <mat-toolbar color="primary" class="toolbar" >Enrollment form</mat-toolbar>
+       <form fxLayoutAlign fxLayoutAlign="strech" fxLayout="column" #userForm="ngForm">
+           <hr>
+          <mat-form-field>
+             <input fxLayout="row" matInput  placeholder="Username" name="username_" [(ngModel)]="userModel.username_">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input fxLayout="row" matInput  placeholder="Email" name="email" [(ngModel)]="userModel.email">
+         </mat-form-field>
+          
+         <mat-form-field>
+            <input fxLayout="row" matInput  placeholder="Phone" name="phone" [(ngModel)]="userModel.phone">
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <mat-label>I am interested in</mat-label>
+            <mat-select name="topic" [(ngModel)]="userModel.topic">
+              <mat-option *ngFor="let pref of preference" value="{{pref}}">{{ pref }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-radio-group [(ngModel)]="userModel.timePreference" name="timePreference" aria-label="Select an option">
+            <p>Choose your preference:</p>
+            <mat-radio-button  value="morning" >Morning(9-11am)</mat-radio-button><br>
+            <mat-radio-button value="evening">Evening(5-7am)</mat-radio-button><br><br>
+          </mat-radio-group>
+
+          <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="userModel.promOffer" name="promOffer">Send promotional offers!</mat-checkbox><br>
+          </section>
+           
+         <button mat-raised-button color="primary" type="submit" (click)="subFormData()">LogIn</button>
+       </form>
+    </mat-card>
+</div>

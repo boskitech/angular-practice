@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'loginApp';
+
+  public interactData = "Component interaction works perfectly";
+  public message: any;
 }

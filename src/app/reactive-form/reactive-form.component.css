@@ -1,0 +1,12 @@
+.toolbar{
+    text-align: center;
+}
+
+.loginbar mat-card{
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.loginbar form{
+    padding: 10px;
+}

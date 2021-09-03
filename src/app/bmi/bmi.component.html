@@ -1,0 +1,17 @@
+<div class="loginbar" fxLayoutAlign="center">
+    <mat-card fxFlex="30">
+      <mat-toolbar color="primary" class="toolbar" >BMI Calculator</mat-toolbar>
+       <form fxLayoutAlign="strech" fxLayout="column">
+          <mat-form-field>
+             <input type="number" [(ngModel)]="weight" name="weight" fxLayout="row" matInput  placeholder="Weight" >
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="number" [(ngModel)]="height" name="height" fxLayout="row" matInput  placeholder="Height">
+         </mat-form-field> 
+         <button mat-raised-button color="primary" type="submit" (click)="calc()">Calculate</button><br>
+         <h2>Your Bmi is: {{bodymass}}</h2>
+       </form>
+       
+    </mat-card>
+</div>
